@@ -1,525 +1,931 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faisal Hanafi — Coder · Cybersecurity · ML</title>
-<meta name="description" content="Faisal Hanafi — Coder, Cybersecurity &amp; ML Enthusiast. Available for hire and projects.">
+
+<title>Faisal Han | Software Engineering · Cybersecurity (SOC) · Machine Learning</title>
+
+<meta name="description" content="Portfolio of Faisal Han — exploring Software Engineering, Cybersecurity (SOC), and Machine Learning while building secure and intelligent systems.">
+
+<meta name="theme-color" content="#0b0d10">
+
+<meta property="og:title" content="Faisal Han">
+<meta property="og:description" content="Software Engineering · Cybersecurity (SOC) · Machine Learning">
+<meta property="og:type" content="website">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --bg:#0b0d10;
-    --bg-raise:#101317;
-    --text:#e9e7e2;
-    --text-dim:#8b9096;
-    --text-faint:#565b61;
-    --accent:#8fb3a6;
-    --accent-soft:rgba(143,179,166,0.10);
-    --border:#1e2227;
-    --serif:'Fraunces', serif;
-    --sans:'Inter', -apple-system, sans-serif;
-    --mono:'JetBrains Mono', monospace;
-  }
 
-  *{ box-sizing:border-box; margin:0; padding:0; }
+:root{
 
-  html{ scroll-behavior:smooth; }
+--bg:#0b0d10;
+--bg-raise:#101317;
 
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:var(--sans);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    background-image:
-      radial-gradient(circle at 15% 8%, rgba(143,179,166,0.05), transparent 45%),
-      radial-gradient(circle at 85% 92%, rgba(143,179,166,0.04), transparent 40%);
-  }
+--text:#e9e7e2;
+--text-dim:#8b9096;
+--text-faint:#565b61;
 
-  a{ color:inherit; text-decoration:none; }
+--accent:#8fb3a6;
+--accent-soft:rgba(143,179,166,.10);
 
-  ::selection{ background:var(--accent-soft); color:var(--accent); }
+--border:#1e2227;
 
-  :focus-visible{
-    outline:1px solid var(--accent);
-    outline-offset:4px;
-  }
+--serif:'Fraunces',serif;
+--sans:'Inter',sans-serif;
+--mono:'JetBrains Mono',monospace;
 
-  .wrap{
-    max-width:640px;
-    margin:0 auto;
-    padding:0 28px;
-  }
+}
 
-  /* ---------- NAV ---------- */
-  header.nav{
-    padding:32px 0 0;
-  }
-  .nav-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding-bottom:20px;
-    border-bottom:1px solid var(--border);
-  }
-  .monogram{
-    font-family:var(--mono);
-    font-size:13px;
-    letter-spacing:0.08em;
-    color:var(--text-dim);
-  }
-  .status{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.05em;
-    color:var(--text-dim);
-    text-transform:uppercase;
-  }
-  .dot{
-    width:6px; height:6px; border-radius:50%;
-    background:var(--accent);
-    box-shadow:0 0 0 3px var(--accent-soft);
-    flex-shrink:0;
-    animation:pulse 2.6s ease-in-out infinite;
-  }
-  @keyframes pulse{
-    0%,100%{ opacity:1; }
-    50%{ opacity:0.45; }
-  }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-  /* ---------- HERO ---------- */
-  .hero{
-    padding:72px 0 56px;
-  }
-  .eyebrow{
-    font-family:var(--mono);
-    font-size:12px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--accent);
-    margin-bottom:22px;
-    opacity:0;
-    animation:rise 0.7s ease forwards;
-  }
-  h1{
-    font-family:var(--serif);
-    font-weight:400;
-    font-size:clamp(38px, 8vw, 58px);
-    line-height:1.08;
-    letter-spacing:-0.01em;
-    color:var(--text);
-    opacity:0;
-    animation:rise 0.8s ease 0.08s forwards;
-  }
-  h1 em{
-    font-style:italic;
-    font-weight:300;
-    color:var(--text-dim);
-  }
-  .role-line{
-    margin-top:18px;
-    font-family:var(--mono);
-    font-size:13px;
-    color:var(--text-dim);
-    letter-spacing:0.02em;
-    opacity:0;
-    animation:rise 0.8s ease 0.16s forwards;
-  }
-  .role-line .sep{ color:var(--text-faint); margin:0 8px; }
+html{
+scroll-behavior:smooth;
+}
 
-  .bio{
-    margin-top:26px;
-    max-width:46ch;
-    color:var(--text-dim);
-    font-size:15.5px;
-    line-height:1.75;
-    opacity:0;
-    animation:rise 0.8s ease 0.24s forwards;
-  }
+body{
 
-  @keyframes rise{
-    from{ opacity:0; transform:translateY(10px); }
-    to{ opacity:1; transform:translateY(0); }
-  }
+background:var(--bg);
 
-  /* ---------- TERMINAL SIGNATURE ---------- */
-  .terminal{
-    margin-top:40px;
-    background:var(--bg-raise);
-    border:1px solid var(--border);
-    border-radius:8px;
-    overflow:hidden;
-    opacity:0;
-    animation:rise 0.8s ease 0.34s forwards;
-  }
-  .terminal-bar{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    padding:11px 14px;
-    border-bottom:1px solid var(--border);
-  }
-  .terminal-bar span{
-    width:8px; height:8px; border-radius:50%;
-    background:var(--border);
-  }
-  .terminal-title{
-    margin-left:8px;
-    font-family:var(--mono);
-    font-size:11px;
-    color:var(--text-faint);
-  }
-  .terminal-body{
-    padding:18px 20px 22px;
-    font-family:var(--mono);
-    font-size:13px;
-    color:var(--text-dim);
-  }
-  .terminal-body .line{ min-height:1.9em; }
-  .terminal-body .prompt{ color:var(--accent); }
-  .terminal-body .out{ color:var(--text); }
-  .cursor{
-    display:inline-block;
-    width:7px; height:14px;
-    background:var(--accent);
-    margin-left:2px;
-    vertical-align:-2px;
-    animation:blink 1s step-end infinite;
-  }
-  @keyframes blink{ 50%{ opacity:0; } }
+color:var(--text);
 
-  /* ---------- LINKS ---------- */
-  .links{
-    margin-top:64px;
-    border-top:1px solid var(--border);
-  }
-  .links-label{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--text-faint);
-    padding:20px 0 4px;
-  }
-  .link-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:18px 0;
-    border-bottom:1px solid var(--border);
-    transition:padding-left 0.25s ease, color 0.25s ease;
-  }
-  .link-row:hover{
-    padding-left:6px;
-    color:var(--accent);
-  }
-  .link-left{
-    display:flex;
-    align-items:center;
-    gap:16px;
-  }
-  .link-icon{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:36px;
-    height:36px;
-    flex-shrink:0;
-    border:1px solid var(--border);
-    border-radius:8px;
-    color:var(--text-dim);
-    transition:border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
-  }
-  .link-icon svg{
-    width:16px;
-    height:16px;
-  }
-  .link-row:hover .link-icon{
-    border-color:var(--accent);
-    color:var(--accent);
-    background:var(--accent-soft);
-  }
-  .link-text{
-    display:flex;
-    align-items:baseline;
-    gap:14px;
-  }
-  .link-index{
-    font-family:var(--mono);
-    font-size:11px;
-    color:var(--text-faint);
-  }
-  .link-name{
-    font-family:var(--serif);
-    font-size:19px;
-    font-weight:400;
-  }
-  .link-handle{
-    font-family:var(--mono);
-    font-size:12px;
-    color:var(--text-faint);
-    transition:color 0.25s ease;
-  }
-  .link-row:hover .link-handle{ color:var(--text-dim); }
-  .link-arrow{
-    font-family:var(--mono);
-    font-size:14px;
-    color:var(--text-faint);
-    transform:translateX(0);
-    transition:transform 0.25s ease, color 0.25s ease;
-  }
-  .link-row:hover .link-arrow{
-    transform:translateX(3px);
-    color:var(--accent);
-  }
+font-family:var(--sans);
 
-  /* ---------- CTA ---------- */
-  .cta{
-    margin-top:56px;
-    padding:36px 0 8px;
-    text-align:left;
-  }
-  .cta-card{
-    background:var(--bg-raise);
-    border:1px solid var(--border);
-    border-radius:10px;
-    padding:28px 26px;
-  }
-  .cta-eyebrow{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--text-faint);
-    margin-bottom:10px;
-  }
-  .cta-title{
-    font-family:var(--serif);
-    font-size:23px;
-    font-weight:400;
-    color:var(--text);
-    max-width:34ch;
-  }
-  .cta-sub{
-    margin-top:8px;
-    font-size:14px;
-    color:var(--text-dim);
-    max-width:40ch;
-  }
-  .cta-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    margin-top:20px;
-    padding:12px 20px;
-    background:var(--accent);
-    color:#0b0d10;
-    font-family:var(--mono);
-    font-size:12.5px;
-    letter-spacing:0.03em;
-    border-radius:6px;
-    font-weight:500;
-    transition:transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .cta-btn:hover{
-    transform:translateY(-1px);
-    box-shadow:0 8px 24px -8px rgba(143,179,166,0.5);
-  }
-  .cta-btn .arrow{ transition:transform 0.2s ease; }
-  .cta-btn:hover .arrow{ transform:translateX(3px); }
+line-height:1.7;
 
-  /* ---------- FOOTER ---------- */
-  footer{
-    margin-top:64px;
-    padding:26px 0 48px;
-    border-top:1px solid var(--border);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    font-family:var(--mono);
-    font-size:11px;
-    color:var(--text-faint);
-  }
+-webkit-font-smoothing:antialiased;
 
-  @media (max-width:480px){
-    .wrap{ padding:0 20px; }
-    .hero{ padding:52px 0 44px; }
-    .link-name{ font-size:17px; }
-    .link-text{ flex-direction:column; align-items:flex-start; gap:2px; }
-    .link-icon{ width:32px; height:32px; }
-    .link-icon svg{ width:14px; height:14px; }
-    footer{ flex-direction:column; gap:8px; align-items:flex-start; }
-  }
+background-image:
+radial-gradient(circle at 15% 8%,rgba(143,179,166,.05),transparent 45%),
+radial-gradient(circle at 85% 92%,rgba(143,179,166,.04),transparent 40%);
 
-  @media (prefers-reduced-motion: reduce){
-    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
-    .eyebrow, h1, .role-line, .bio, .terminal{ opacity:1; }
-  }
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.wrap{
+
+max-width:640px;
+
+margin:auto;
+
+padding:0 28px;
+
+}
+
+header{
+
+padding:32px 0 0;
+
+}
+
+.nav-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding-bottom:20px;
+
+border-bottom:1px solid var(--border);
+
+}
+
+.monogram{
+
+font-family:var(--mono);
+
+font-size:13px;
+
+color:var(--text-dim);
+
+letter-spacing:.08em;
+
+}
+
+.status{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+font-family:var(--mono);
+
+font-size:11px;
+
+text-transform:uppercase;
+
+color:var(--text-dim);
+
+}
+
+.dot{
+
+width:6px;
+height:6px;
+
+border-radius:50%;
+
+background:var(--accent);
+
+box-shadow:0 0 0 3px var(--accent-soft);
+
+animation:pulse 2.5s infinite;
+
+}
+
+@keyframes pulse{
+
+0%,100%{opacity:1;}
+
+50%{opacity:.4;}
+
+}
+
+.hero{
+
+padding:72px 0 56px;
+
+}
+
+.eyebrow{
+
+font-family:var(--mono);
+
+font-size:12px;
+
+text-transform:uppercase;
+
+letter-spacing:.12em;
+
+color:var(--accent);
+
+margin-bottom:20px;
+
+}
+
+h1{
+
+font-family:var(--serif);
+
+font-weight:400;
+
+font-size:clamp(40px,8vw,60px);
+
+line-height:1.05;
+
+}
+
+h1 em{
+
+font-style:italic;
+
+font-weight:300;
+
+color:var(--text-dim);
+
+}
+
+.role-line{
+
+margin-top:18px;
+
+font-family:var(--mono);
+
+font-size:13px;
+
+color:var(--text-dim);
+
+}
+
+.sep{
+
+margin:0 8px;
+
+color:var(--text-faint);
+
+}
+
+.bio{
+
+margin-top:24px;
+
+max-width:46ch;
+
+color:var(--text-dim);
+
+font-size:15.5px;
+
+line-height:1.8;
+
+}
+
 </style>
+
 </head>
+
 <body>
 
 <div class="wrap">
 
-  <header class="nav">
-    <div class="nav-row">
-      <span class="monogram">FH / HAN</span>
-      <span class="status"><span class="dot"></span>Accepting select projects</span>
-    </div>
-  </header>
+<header>
 
-  <main>
-    <section class="hero">
-      <p class="eyebrow">Personal Profile</p>
-      <h1><em>Faisal</em><br><em>Han</em></h1>
-      <p class="role-line">Coder<span class="sep">/</span>Cybersecurity<span class="sep">/</span>ML Enthusiast</p>
-      <p class="bio">I build software, break it on purpose, and teach machines to notice what shouldn't be there. Quiet work, careful craft — currently taking on select freelance and collaborative projects.</p>
+<div class="nav-row">
+
+<span class="monogram">
+FH / HAN
+</span>
+
+<span class="status">
+
+<span class="dot"></span>
+
+Open to Opportunities
+
+</span>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<p class="eyebrow">
+About
+</p>
+
+<h1>
+
+<em>Faisal</em><br>
+
+<em>Han</em>
+
+</h1>
+
+<p class="role-line">
+
+Software Engineering
+
+<span class="sep">/</span>
+
+Cybersecurity (SOC)
+
+<span class="sep">/</span>
+
+Machine Learning
+
+</p>
+
+<p class="bio">
+
+I'm a software developer exploring Security Operations (SOC) and Machine Learning to build secure, intelligent systems. I enjoy developing practical software, strengthening security through hands-on labs, and continuously learning modern AI technologies.
+
+</p>
 
       <div class="terminal">
+
         <div class="terminal-bar">
-          <span></span><span></span><span></span>
-          <span class="terminal-title">han@profile</span>
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <span class="terminal-title">
+            han@profile
+          </span>
+
         </div>
+
         <div class="terminal-body" id="termBody">
-          <div class="line"><span class="prompt">$</span> whoami</div>
+
+          <div class="line">
+
+            <span class="prompt">$</span>
+
+            whoami
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <section class="links">
-      <p class="links-label">Elsewhere</p>
+<style>
 
-      <a class="link-row" href="https://faisal-han.medium.com" target="_blank" rel="noopener">
-        <span class="link-left">
-          <span class="link-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.87 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
-          </span>
-          <span class="link-text">
-            <span class="link-name">Medium</span>
-            <span class="link-handle">writing on security &amp; ML</span>
-          </span>
-        </span>
-        <span class="link-arrow">→</span>
-      </a>
+.terminal{
 
-      <a class="link-row" href="https://x.com/faisalhanv314" target="_blank" rel="noopener">
-        <span class="link-left">
-          <span class="link-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.22-6.83-5.97 6.83H1.65l7.73-8.84L1.2 2.25h6.83l4.72 6.24zm-1.16 17.52h1.83L7.03 4.13H5.06z"/></svg>
-          </span>
-          <span class="link-text">
-            <span class="link-name">X</span>
-            <span class="link-handle">notes on infosec &amp; code</span>
-          </span>
-        </span>
-        <span class="link-arrow">→</span>
-      </a>
+margin-top:42px;
 
-      <a class="link-row" href="https://linkedin.com/in/hand-vi/" target="_blank" rel="noopener">
-        <span class="link-left">
-          <span class="link-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56z"/></svg>
-          </span>
-          <span class="link-text">
-            <span class="link-name">LinkedIn</span>
-            <span class="link-handle">work &amp; experience</span>
-          </span>
-        </span>
-        <span class="link-arrow">→</span>
-      </a>
+background:var(--bg-raise);
 
-      <a class="link-row" href="https://github.com/faisal-han" target="_blank" rel="noopener">
-        <span class="link-left">
-          <span class="link-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.44-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.21.66.8.55A10.53 10.53 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
-          </span>
-          <span class="link-text">
-            <span class="link-name">GitHub</span>
-            <span class="link-handle">code &amp; open-source work</span>
-          </span>
-        </span>
-        <span class="link-arrow">→</span>
-      </a>
-    </section>
+border:1px solid var(--border);
 
-    <section class="cta">
-      <div class="cta-card">
-        <p class="cta-eyebrow">Hire / Project Inquiry</p>
-        <p class="cta-title">Have something worth building or securing?</p>
-        <p class="cta-sub">Book a short call — no forms, no back-and-forth. Straight to a calendar slot.</p>
-        <a class="cta-btn" href="https://cal.com/faisal-han" target="_blank" rel="noopener">
-          Book a call <span class="arrow">→</span>
-        </a>
-      </div>
-    </section>
-  </main>
+border-radius:10px;
 
-  <footer>
-    <span>© 2026 Faisal Han</span>
-    <span>Built quietly.</span>
-  </footer>
+overflow:hidden;
+
+}
+
+.terminal-bar{
+
+display:flex;
+
+align-items:center;
+
+gap:6px;
+
+padding:12px 16px;
+
+border-bottom:1px solid var(--border);
+
+}
+
+.terminal-bar span:not(.terminal-title){
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+background:var(--border);
+
+}
+
+.terminal-title{
+
+margin-left:8px;
+
+font-family:var(--mono);
+
+font-size:11px;
+
+color:var(--text-faint);
+
+}
+
+.terminal-body{
+
+padding:20px;
+
+font-family:var(--mono);
+
+font-size:13px;
+
+line-height:2;
+
+color:var(--text-dim);
+
+}
+
+.prompt{
+
+color:var(--accent);
+
+}
+
+.out{
+
+color:var(--text);
+
+}
+
+.cursor{
+
+display:inline-block;
+
+width:7px;
+
+height:14px;
+
+background:var(--accent);
+
+margin-left:2px;
+
+animation:blink 1s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:0;
+
+}
+
+}
+
+.links{
+
+margin-top:70px;
+
+border-top:1px solid var(--border);
+
+}
+
+.links-label{
+
+padding:20px 0;
+
+font-family:var(--mono);
+
+font-size:11px;
+
+text-transform:uppercase;
+
+letter-spacing:.12em;
+
+color:var(--text-faint);
+
+}
+
+.link-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px 0;
+
+border-bottom:1px solid var(--border);
+
+transition:.25s;
+
+}
+
+.link-row:hover{
+
+padding-left:8px;
+
+color:var(--accent);
+
+}
+
+.link-name{
+
+font-family:var(--serif);
+
+font-size:20px;
+
+}
+
+.link-handle{
+
+font-family:var(--mono);
+
+font-size:12px;
+
+color:var(--text-faint);
+
+margin-top:4px;
+
+}
+
+.link-arrow{
+
+font-family:var(--mono);
+
+font-size:14px;
+
+}
+
+</style>
+
+<section class="links">
+
+<p class="links-label">
+
+Elsewhere
+
+</p>
+
+<a class="link-row"
+href="https://github.com/faisal-han"
+target="_blank">
+
+<div>
+
+<div class="link-name">
+
+GitHub
+
+</div>
+
+<div class="link-handle">
+
+projects · open source · experiments
+
+</div>
+
+</div>
+
+<div class="link-arrow">
+
+→
+
+</div>
+
+</a>
+
+<a class="link-row"
+href="https://linkedin.com/in/hand-vi/"
+target="_blank">
+
+<div>
+
+<div class="link-name">
+
+LinkedIn
+
+</div>
+
+<div class="link-handle">
+
+career · experience
+
+</div>
+
+</div>
+
+<div class="link-arrow">
+
+→
+
+</div>
+
+</a>
+
+<a class="link-row"
+href="https://faisal-han.medium.com"
+target="_blank">
+
+<div>
+
+<div class="link-name">
+
+Medium
+
+</div>
+
+<div class="link-handle">
+
+cybersecurity · machine learning
+
+</div>
+
+</div>
+
+<div class="link-arrow">
+
+→
+
+</div>
+
+</a>
+
+<a class="link-row"
+href="https://x.com/faisalhanv314"
+target="_blank">
+
+<div>
+
+<div class="link-name">
+
+X
+
+</div>
+
+<div class="link-handle">
+
+notes · learning journey
+
+</div>
+
+</div>
+
+<div class="link-arrow">
+
+→
+
+</div>
+
+</a>
+
+</section>
+
+<style>
+
+.cta{
+
+margin-top:64px;
+
+}
+
+.cta-card{
+
+background:var(--bg-raise);
+
+border:1px solid var(--border);
+
+border-radius:12px;
+
+padding:30px;
+
+}
+
+.cta-eyebrow{
+
+font-family:var(--mono);
+
+font-size:11px;
+
+text-transform:uppercase;
+
+letter-spacing:.12em;
+
+color:var(--text-faint);
+
+margin-bottom:10px;
+
+}
+
+.cta-title{
+
+font-family:var(--serif);
+
+font-size:28px;
+
+font-weight:400;
+
+line-height:1.3;
+
+}
+
+.cta-sub{
+
+margin-top:12px;
+
+color:var(--text-dim);
+
+font-size:15px;
+
+line-height:1.8;
+
+}
+
+.cta-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+margin-top:24px;
+
+padding:13px 22px;
+
+background:var(--accent);
+
+color:#0b0d10;
+
+border-radius:8px;
+
+font-family:var(--mono);
+
+font-size:13px;
+
+font-weight:600;
+
+transition:.25s;
+
+}
+
+.cta-btn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 10px 30px rgba(143,179,166,.25);
+
+}
+
+footer{
+
+margin-top:70px;
+
+padding:28px 0 50px;
+
+border-top:1px solid var(--border);
+
+display:flex;
+
+justify-content:space-between;
+
+font-family:var(--mono);
+
+font-size:11px;
+
+color:var(--text-faint);
+
+}
+
+@media(max-width:480px){
+
+footer{
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+}
+
+</style>
+
+<section class="cta">
+
+<div class="cta-card">
+
+<p class="cta-eyebrow">
+
+Open for Opportunities
+
+</p>
+
+<p class="cta-title">
+
+Let's build secure and intelligent software together.
+
+</p>
+
+<p class="cta-sub">
+
+I'm currently exploring Software Engineering, Security Operations (SOC), and Machine Learning. I'm open to internships, entry-level roles, freelance work, and meaningful collaborations.
+
+</p>
+
+<a
+class="cta-btn"
+href="https://cal.com/faisal-han"
+target="_blank"
+rel="noopener">
+
+Book a Call →
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<span>
+
+© 2026 Faisal Han
+
+</span>
+
+<span>
+
+Built with curiosity.
+
+</span>
+
+</footer>
 
 </div>
 
 <script>
-  // Typewriter sequence for the terminal signature block
-  (function(){
-    const body = document.getElementById('termBody');
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const sequence = [
-      { type:'out', text:'faisal_han' },
-      { type:'cmd', text:'role' },
-      { type:'out', text:'coder · cybersecurity · ml enthusiast' },
-      { type:'cmd', text:'status' },
-      { type:'out', text:'available_for_hire: true' }
-    ];
+(function(){
 
-    function makeLine(){
-      const div = document.createElement('div');
-      div.className = 'line';
-      return div;
-    }
+const body=document.getElementById("termBody");
 
-    function typeText(el, text, speed, cb){
-      if(reduced){ el.textContent = text; cb && cb(); return; }
-      let i = 0;
-      const t = setInterval(()=>{
-        el.textContent = text.slice(0, i+1);
-        i++;
-        if(i >= text.length){ clearInterval(t); cb && cb(); }
-      }, speed);
-    }
+const sequence=[
 
-    function runStep(idx){
-      if(idx >= sequence.length) return;
-      const step = sequence[idx];
-      const line = makeLine();
-      body.appendChild(line);
+{type:"out",text:"faisal_han"},
 
-      if(step.type === 'cmd'){
-        const prompt = document.createElement('span');
-        prompt.className = 'prompt';
-        prompt.textContent = '$ ';
-        const txt = document.createElement('span');
-        line.appendChild(prompt);
-        line.appendChild(txt);
-        typeText(txt, step.text, 45, ()=> setTimeout(()=>runStep(idx+1), 260));
-      } else {
-        const txt = document.createElement('span');
-        txt.className = 'out';
-        line.appendChild(txt);
-        typeText(txt, step.text, 22, ()=> setTimeout(()=>runStep(idx+1), 380));
-      }
-    }
+{type:"cmd",text:"focus"},
 
-    setTimeout(()=> runStep(0), 650);
-  })();
+{type:"out",text:"software engineering · cybersecurity (soc) · machine learning"},
+
+{type:"cmd",text:"currently_learning"},
+
+{type:"out",text:"soc operations · detection engineering · ai engineering"},
+
+{type:"cmd",text:"tools"},
+
+{type:"out",text:"python · linux · git · networking"},
+
+{type:"cmd",text:"status"},
+
+{type:"out",text:"open_to_work: true"}
+
+];
+
+function line(){
+
+const d=document.createElement("div");
+
+d.className="line";
+
+return d;
+
+}
+
+function type(el,text,speed,cb){
+
+let i=0;
+
+const t=setInterval(()=>{
+
+el.textContent=text.substring(0,i+1);
+
+i++;
+
+if(i===text.length){
+
+clearInterval(t);
+
+cb&&cb();
+
+}
+
+},speed);
+
+}
+
+function next(i){
+
+if(i>=sequence.length)return;
+
+const s=sequence[i];
+
+const l=line();
+
+body.appendChild(l);
+
+if(s.type==="cmd"){
+
+const p=document.createElement("span");
+
+p.className="prompt";
+
+p.textContent="$ ";
+
+const txt=document.createElement("span");
+
+l.appendChild(p);
+
+l.appendChild(txt);
+
+type(txt,s.text,45,()=>setTimeout(()=>next(i+1),350));
+
+}else{
+
+const txt=document.createElement("span");
+
+txt.className="out";
+
+l.appendChild(txt);
+
+type(txt,s.text,18,()=>setTimeout(()=>next(i+1),350));
+
+}
+
+}
+
+setTimeout(()=>next(0),600);
+
+})();
+
 </script>
 
 </body>
